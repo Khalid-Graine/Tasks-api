@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request ;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+// Route::get('/test',   ) {
+
+//     return response(' <p style="color: red">hello word</p>');
+// });
+
+Route::get('/welcome/{id}', [TestController::class, 'index']);
+// Route::middleware('auth')
+//        ->group(function () {
+//     Route::get('/dashboard', 'DashboardController@index');
+//     Route::get('/profile', 'ProfileController@show');
+// });
